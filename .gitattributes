@@ -1,0 +1,13 @@
+# Normalize line endings for text; let Git auto-detect.
+* text=auto
+
+# Never apply line-ending conversion to binary assets.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
