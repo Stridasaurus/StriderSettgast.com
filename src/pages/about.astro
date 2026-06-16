@@ -3,80 +3,63 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../utils/url';
 ---
 
-<BaseLayout title="About — Strider Settgast" description="Strider Settgast — physics undergraduate and computational researcher at the Florida Institute of Technology.">
+<BaseLayout
+  title="About — Strider Settgast"
+  description="Physics undergraduate at Florida Institute of Technology, working on inverse problems, signal processing, and MHD wave localization."
+>
   <div class="container">
     <header class="page-header">
       <h1>About</h1>
-      <p>Education, research, and what I'm currently working on.</p>
+      <p>What I work on, and why.</p>
     </header>
 
     <div class="prose">
       <p>
         I'm a physics undergraduate at the Florida Institute of Technology,
-        minoring in computational mathematics. My work centers on pulling
-        physical signals out of data — currently leading research on localizing
-        magnetohydrodynamic (MHD) wave sources from ground-based magnetometer
-        measurements. I'm most at home where signal processing, inverse problems,
-        and machine learning overlap.
+        minoring in computational mathematics and graduating in 2027. Most of
+        what I do comes down to one problem I find endlessly interesting: how
+        do you pull a real signal out of noisy data — and how do you know it's
+        actually real?
       </p>
 
-      <h2>Education</h2>
-      <p class="entry-head">
-        <strong>Florida Institute of Technology</strong> — Melbourne, FL
+      <p>
+        Right now that means leading research on magnetohydrodynamic waves,
+        using a method called inverse beamforming to locate their sources from
+        the faint traces they leave in ground-based magnetometer readings. I
+        derived the underlying math, built the full pipeline in Python, and
+        found the first evidence that the signal is genuinely global rather
+        than local noise. A first-author paper is on the way.
       </p>
-      <p class="entry-sub">
-        B.S. in Physics, Minor in Computational Mathematics<br />
-        Expected May 2027 · GPA 3.89 / 4.00
-      </p>
-      <ul>
-        <li>Sigma Pi Sigma — National Physics Honor Society</li>
-        <li>
-          Relevant coursework: Quantum Mechanics, Electromagnetic Theory, Modern
-          Physics, Complex Variables, Introduction to PDEs &amp; Applications,
-          Linear Algebra, Differential Equations, Differential Geometry
-          (graduate), Deep Learning (graduate), Scientific Computing, Electronic
-          Measurement &amp; Instrumentation (with lab)
-        </li>
-      </ul>
 
-      <h2>Research</h2>
-      <p class="entry-head">
-        <strong>Undergraduate Researcher &amp; Project Lead</strong> — Florida Institute of Technology
+      <p>
+        What I find compelling is that the same mathematics turns up
+        everywhere. The tools that locate a wave source in geomagnetic data
+        are, underneath, the tools that decode a brain signal from an EEG or
+        find structure in a financial time series. I came to physics for the
+        equations and stayed for that strange unity — the sense that signal
+        processing, inverse problems, and probability are one language spoken
+        in many places. I'm most at home where those overlap, and I'd rather
+        follow the mathematics into a new domain than stay put in one.
       </p>
-      <p class="entry-sub">Advisor: Dr. Paul Martin · March 2026 – Present</p>
-      <ul>
-        <li>
-          Developing an inverse beamforming method using spherical elementary
-          current systems (SECS) to localize and characterize MHD wave sources
-          from ground-based time-series magnetometer data.
-        </li>
-        <li>
-          Derived the underlying mathematical framework, implemented the full
-          pipeline in Python (NumPy / SciPy / scikit-learn), and ran the analysis
-          from raw magnetometer time series through source reconstruction.
-        </li>
-        <li>
-          Showed, via a frequency-correlation spectrum across the full
-          observation window, that spatially separated magnetometers detect
-          coherent global periodic anomalies — evidence of a genuine large-scale
-          signal rather than local noise.
-        </li>
-        <li>Lead a team of three researchers, coordinating workflow and mentoring members on methods and tooling.</li>
-        <li>Preparing a first-author manuscript for submission (target: November 2026).</li>
-      </ul>
 
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Programming:</strong> Python (proficient), C++ (foundational), SQL, Bash</li>
-        <li><strong>Scientific computing &amp; ML:</strong> NumPy, SciPy, scikit-learn, PyTorch, MATLAB</li>
-        <li><strong>Tools:</strong> Git, LaTeX</li>
-        <li><strong>Methods:</strong> signal processing, inverse problems, beamforming, time-series analysis, numerical modeling</li>
-      </ul>
-
-      <p class="contact-note">
-        See the <a href={withBase('/projects')}>projects</a> and <a href={withBase('/blog')}>blog</a>,
-        or reach me through the links in the footer.
+      <p>
+        When I'm not doing that, I'm writing about what I'm learning — which
+        is mostly what this site is for.
       </p>
+
+      <p class="credentials">
+        B.S. Physics &amp; Computational Mathematics, Florida Institute of
+        Technology · Expected 2027 · GPA 3.89 · Sigma Pi Sigma
+      </p>
+
+      <div class="links">
+        <a href={withBase('/cv-strider-settgast.pdf')} target="_blank" rel="noopener noreferrer">
+          Read my full CV (PDF) →
+        </a>
+        <a href={withBase('/projects')}>
+          See my projects →
+        </a>
+      </div>
     </div>
   </div>
 </BaseLayout>
@@ -107,60 +90,39 @@ import { withBase } from '../utils/url';
 
   .prose {
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.8;
     color: #333;
-    max-width: 680px;
+    max-width: 640px;
     padding: 2.5rem 0 4rem;
   }
 
-  .prose h2 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    color: var(--text-primary);
-    margin: 2.5rem 0 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border);
-  }
-
   .prose p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
   }
 
-  .entry-head {
-    margin-bottom: 0.15rem;
-  }
-
-  .entry-sub {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.75rem;
-  }
-
-  .prose ul {
-    padding-left: 1.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .prose li {
-    margin-bottom: 0.4rem;
-  }
-
-  .contact-note {
-    margin-top: 2.5rem;
-    padding-top: 1.25rem;
+  .credentials {
+    font-size: 0.875rem;
+    color: var(--text-muted);
     border-top: 1px solid var(--border);
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem !important;
   }
 
-  .prose a {
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .links a {
+    font-size: 0.9375rem;
     color: var(--accent);
+    text-decoration: none;
+  }
+
+  .links a:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
-  }
-
-  .prose a:hover {
-    opacity: 0.8;
   }
 </style>
