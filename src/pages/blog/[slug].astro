@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../utils/url';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -46,7 +47,7 @@ function formatDate(date: Date): string {
     </article>
 
     <nav class="back-link">
-      <a href="/blog">← All posts</a>
+      <a href={withBase('/blog')}>← All posts</a>
     </nav>
   </div>
 </BaseLayout>

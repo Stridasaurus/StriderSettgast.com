@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionCard from '../components/SectionCard.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout title="Strider Settgast">
@@ -29,17 +30,17 @@ import SectionCard from '../components/SectionCard.astro';
       <SectionCard
         title="About"
         description="Background, interests, and what I'm currently working on."
-        href="/about"
+        href={withBase('/about')}
       />
       <SectionCard
         title="Projects"
         description="Deep learning and computer vision projects, with code and writeups."
-        href="/projects"
+        href={withBase('/projects')}
       />
       <SectionCard
         title="Blog"
         description="Notes on machine learning, research papers, and things I'm figuring out."
-        href="/blog"
+        href={withBase('/blog')}
       />
     </section>
 

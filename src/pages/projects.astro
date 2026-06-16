@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = await getCollection('projects');
+---
+
+<BaseLayout title="Projects — Strider Settgast" description="Deep learning and computer vision projects, with code and writeups.">
+  <div class="container">
+    <header class="page-header">
+      <h1>Projects</h1>
+      <p>Deep learning and computer vision projects, with code and writeups.</p>
+    </header>
+
+    <ul class="project-list">
+      {projects.map(project => (
+        <li class="project-item">
+          <h2>{project.data.title}</h2>
+          {project.data.description && <p class="description">{project.data.description}</p>}
+          {project.data.tags && project.data.tags.length > 0 && (
+            <ul class="tags" aria-label="Tags">
+              {project.data.tags.map(tag => <li>{tag}</li>)}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    {projects.length === 0 && (
+      <p class="empty">No projects yet.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    padding: 4rem 0 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .project-list {
+    list-style: none;
+    padding-bottom: 4rem;
+  }
+
+  .project-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-item h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 560px;
+    margin-bottom: 0.6rem;
+  }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tags li {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .empty {
+    padding: 2rem 0;
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+</style>

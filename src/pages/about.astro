@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
+---
+
+<BaseLayout title="About — Strider Settgast" description="About Strider Settgast — machine learning student & developer based in Florida.">
+  <div class="container">
+    <header class="page-header">
+      <h1>About</h1>
+      <p>Background, interests, and what I'm currently working on.</p>
+    </header>
+
+    <div class="prose">
+      <p>
+        I'm Strider Settgast, a machine learning student and developer based in
+        Florida. My focus is deep learning and computer vision — building models,
+        writing about what I learn, and sharing work in progress.
+      </p>
+      <p>
+        This site is where I collect projects and notes. Have a look at the
+        <a href={withBase('/projects')}>projects</a> or the <a href={withBase('/blog')}>blog</a>, or get in
+        touch using the links in the footer.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    padding: 4rem 0 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .prose {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #333;
+    max-width: 680px;
+    padding: 2.5rem 0 4rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose a:hover {
+    opacity: 0.8;
+  }
+</style>
