@@ -3,23 +3,79 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../utils/url';
 ---
 
-<BaseLayout title="About — Strider Settgast" description="About Strider Settgast — machine learning student & developer based in Florida.">
+<BaseLayout title="About — Strider Settgast" description="Strider Settgast — physics undergraduate and computational researcher at the Florida Institute of Technology.">
   <div class="container">
     <header class="page-header">
       <h1>About</h1>
-      <p>Background, interests, and what I'm currently working on.</p>
+      <p>Education, research, and what I'm currently working on.</p>
     </header>
 
     <div class="prose">
       <p>
-        I'm Strider Settgast, a machine learning student and developer based in
-        Florida. My focus is deep learning and computer vision — building models,
-        writing about what I learn, and sharing work in progress.
+        I'm a physics undergraduate at the Florida Institute of Technology,
+        minoring in computational mathematics. My work centers on pulling
+        physical signals out of data — currently leading research on localizing
+        magnetohydrodynamic (MHD) wave sources from ground-based magnetometer
+        measurements. I'm most at home where signal processing, inverse problems,
+        and machine learning overlap.
       </p>
-      <p>
-        This site is where I collect projects and notes. Have a look at the
-        <a href={withBase('/projects')}>projects</a> or the <a href={withBase('/blog')}>blog</a>, or get in
-        touch using the links in the footer.
+
+      <h2>Education</h2>
+      <p class="entry-head">
+        <strong>Florida Institute of Technology</strong> — Melbourne, FL
+      </p>
+      <p class="entry-sub">
+        B.S. in Physics, Minor in Computational Mathematics<br />
+        Expected May 2027 · GPA 3.89 / 4.00
+      </p>
+      <ul>
+        <li>Sigma Pi Sigma — National Physics Honor Society</li>
+        <li>
+          Relevant coursework: Quantum Mechanics, Electromagnetic Theory, Modern
+          Physics, Complex Variables, Introduction to PDEs &amp; Applications,
+          Linear Algebra, Differential Equations, Differential Geometry
+          (graduate), Deep Learning (graduate), Scientific Computing, Electronic
+          Measurement &amp; Instrumentation (with lab)
+        </li>
+      </ul>
+
+      <h2>Research</h2>
+      <p class="entry-head">
+        <strong>Undergraduate Researcher &amp; Project Lead</strong> — Florida Institute of Technology
+      </p>
+      <p class="entry-sub">Advisor: Dr. Paul Martin · March 2026 – Present</p>
+      <ul>
+        <li>
+          Developing an inverse beamforming method using spherical elementary
+          current systems (SECS) to localize and characterize MHD wave sources
+          from ground-based time-series magnetometer data.
+        </li>
+        <li>
+          Derived the underlying mathematical framework, implemented the full
+          pipeline in Python (NumPy / SciPy / scikit-learn), and ran the analysis
+          from raw magnetometer time series through source reconstruction.
+        </li>
+        <li>
+          Showed, via a frequency-correlation spectrum across the full
+          observation window, that spatially separated magnetometers detect
+          coherent global periodic anomalies — evidence of a genuine large-scale
+          signal rather than local noise.
+        </li>
+        <li>Lead a team of three researchers, coordinating workflow and mentoring members on methods and tooling.</li>
+        <li>Preparing a first-author manuscript for submission (target: November 2026).</li>
+      </ul>
+
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python (proficient), C++ (foundational), SQL, Bash</li>
+        <li><strong>Scientific computing &amp; ML:</strong> NumPy, SciPy, scikit-learn, PyTorch, MATLAB</li>
+        <li><strong>Tools:</strong> Git, LaTeX</li>
+        <li><strong>Methods:</strong> signal processing, inverse problems, beamforming, time-series analysis, numerical modeling</li>
+      </ul>
+
+      <p class="contact-note">
+        See the <a href={withBase('/projects')}>projects</a> and <a href={withBase('/blog')}>blog</a>,
+        or reach me through the links in the footer.
       </p>
     </div>
   </div>
@@ -57,8 +113,45 @@ import { withBase } from '../utils/url';
     padding: 2.5rem 0 4rem;
   }
 
+  .prose h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    margin: 2.5rem 0 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
   .prose p {
+    margin-bottom: 1rem;
+  }
+
+  .entry-head {
+    margin-bottom: 0.15rem;
+  }
+
+  .entry-sub {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .prose ul {
+    padding-left: 1.5rem;
     margin-bottom: 1.25rem;
+  }
+
+  .prose li {
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-note {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
   }
 
   .prose a {
