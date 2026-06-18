@@ -5,18 +5,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const projects = await getCollection('projects');
 ---
 
-<BaseLayout title="Projects — Strider Settgast" description="Deep learning and computer vision projects, with code and writeups.">
+<BaseLayout title="Projects — Strider Settgast" description="Interactive tools and research code where signal processing, inverse problems, and probability meet — from geomagnetic waves to financial markets to neural dynamics.">
   <div class="container">
     <header class="page-header">
       <h1>Projects</h1>
-      <p>Deep learning and computer vision projects, with code and writeups.</p>
+      <p>Interactive tools and research code where signal processing, inverse problems, and probability meet — from geomagnetic waves to financial markets to neural dynamics.</p>
     </header>
 
     <ul class="project-list">
       {projects.map(project => (
         <li class="project-item">
-          <h2>{project.data.title}</h2>
+          <h2>
+            {project.data.link
+              ? <a href={project.data.link} target="_blank" rel="noopener noreferrer">{project.data.title}</a>
+              : project.data.title}
+          </h2>
           {project.data.description && <p class="description">{project.data.description}</p>}
+          {project.data.link && (
+            <a class="project-link" href={project.data.link} target="_blank" rel="noopener noreferrer">
+              {project.data.link.replace(/^https?:\/\//, '').replace(/\/$/, '')} →
+            </a>
+          )}
           {project.data.tags && project.data.tags.length > 0 && (
             <ul class="tags" aria-label="Tags">
               {project.data.tags.map(tag => <li>{tag}</li>)}
@@ -73,12 +82,34 @@ const projects = await getCollection('projects');
     margin-bottom: 0.3rem;
   }
 
+  .project-item h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .project-item h2 a:hover {
+    color: var(--accent);
+  }
+
   .description {
     font-size: 0.875rem;
     color: var(--text-secondary);
     line-height: 1.5;
     max-width: 560px;
     margin-bottom: 0.6rem;
+  }
+
+  .project-link {
+    display: inline-block;
+    font-size: 0.8125rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .tags {
