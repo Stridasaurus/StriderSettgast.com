@@ -5,57 +5,50 @@ import { withBase } from '../utils/url';
 
 <BaseLayout
   title="About — Strider Settgast"
-  description="Physics undergraduate at Florida Institute of Technology, working on inverse problems, signal processing, and MHD wave localization."
+  description="Physics, mathematics, computation, and the ideas that connect technical fields."
 >
   <div class="container">
     <header class="page-header">
       <h1>About</h1>
-      <p>What I work on, and why.</p>
+      <p>What I care about, and how I work.</p>
     </header>
 
     <div class="prose">
       <p>
-        I’m a physics undergraduate at Florida Institute of Technology,
-        minoring in computational mathematics and graduating in 2027. I’m
-        especially interested in problems where physics, mathematics, and
-        computation meet.
+        My formal training is in physics, with a minor in computational
+        mathematics at Florida Institute of Technology. I'm most interested in
+        problems where the important structure is not directly visible and has
+        to be inferred from measurements, models, or incomplete information.
       </p>
 
       <p>
-        My current research with Dr. Paul Martin investigates generalized
-        inverse beamforming for inverse-source reconstruction from
-        ground-magnetometer arrays. The work uses controlled synthetic
-        experiments, SECS-based forward models, and model-selection and
-        validation methods to understand where the approach succeeds, where it
-        fails, and what conclusions the data support.
+        What I find compelling is how often the same mathematical ideas
+        reappear in different places. Inverse problems, dynamical models,
+        transforms, probability, geometry, and numerical methods can show up
+        in very different scientific settings while preserving much of the
+        same underlying structure. I like following those connections rather
+        than treating fields as isolated boxes.
       </p>
 
       <p>
-        Recent academic work includes deep-learning projects on magnetic source
-        localization and volatility forecasting, along with a graduate
-        differential-geometry essay developing Stokes’ theorem through the
-        duality between the exterior derivative and boundary operator.
+        I tend to be drawn to open-ended technical work: learning unfamiliar
+        material, building a coherent picture of a problem, and then designing
+        an experiment, simulation, or system that can test that picture against
+        something concrete. That has led me through scientific computing,
+        machine learning, signal analysis, geometry, neuroscience, and
+        quantitative modeling, with physics as the main anchor.
       </p>
 
       <p>
-        What I find compelling is that the same mathematics turns up
-        everywhere. The tools that locate a wave source in geomagnetic data
-        are, underneath, the tools that decode a brain signal from an EEG or
-        find structure in a financial time series. I came to physics for the
-        equations and stayed for that strange unity — the sense that signal
-        processing, inverse problems, and probability are one language spoken
-        in many places. I'm most at home where those overlap, and I'd rather
-        follow the mathematics into a new domain than stay put in one.
+        I use computation heavily as a scientific tool, including modern
+        AI-assisted development workflows. I care about using those tools to
+        extend reasoning and experimentation, not to replace the need to
+        understand what a model or calculation is actually saying.
       </p>
 
       <p>
-        When I'm not doing that, I'm writing about what I'm learning — which
-        is mostly what this site is for.
-      </p>
-
-      <p class="credentials">
-        B.S. Physics, Minor in Computational Mathematics · Expected Spring 2027
-        · Florida Tech GPA 3.89
+        This site is a place for public projects and longer-form writing about
+        ideas I want to work through carefully.
       </p>
 
       <div class="links">
@@ -101,15 +94,6 @@ import { withBase } from '../utils/url';
 
   .prose p {
     margin-bottom: 1.4rem;
-  }
-
-  .credentials {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem !important;
   }
 
   .links {
